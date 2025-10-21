@@ -33,7 +33,13 @@ class Solution {
         if(head.next==null){
             return head;
         }
-        //if(head.next)
+        ListNode temp=head;
+        int len=0;
+        while(temp!=null){
+            temp=temp.next;
+            len++;
+        }
+        k=k%len;
         while(i<=k){
             ListNode ptail=findPTail(head);
             head=rearrange(head,ptail);
